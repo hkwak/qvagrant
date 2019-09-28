@@ -8,12 +8,17 @@
       "email": "henryk.kwak@gmail.com"
     }
   ],
+  "autoload-dev": {
+    "psr-4": {
+      "c\\QVagrant\\": "src/"
+    }
+  },
   "scripts": {
     "post-install-cmd": [
-      "php stack/postInstall.php"
+      "Hkwak\\Qvagrant\\Installer::postInstall"
     ],
     "post-update-cmd": [
-      "php stack/postInstall.php"
+      "Hkwak\\Qvagrant\\Installer::postInstall"
     ]
   }
 }
