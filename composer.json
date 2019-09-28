@@ -9,8 +9,8 @@
     }
   ],
   "scripts": {
-    "post-package-install": [
-      "cp ./Vendor/hkwak/qvagrant/Vagrantfile ."
+    "post-install-cmd": [
+      "cp Vendor/hkwak/qvagrant/Vagrantfile ."
     ]
   }
 }
