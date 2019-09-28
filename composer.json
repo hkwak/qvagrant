@@ -7,5 +7,10 @@
       "name": "Henryk Kwak",
       "email": "henryk.kwak@gmail.com"
     }
-  ]
+  ],
+  "scripts": {
+    "post-package-install": [
+      "cp ./Vendor/hkwak/qvagrant/Vagrantfile ."
+    ]
+  }
 }
