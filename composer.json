@@ -10,7 +10,7 @@
   ],
   "scripts": {
     "post-install-cmd": [
-      "php -r \"copy('Vendor/hkwak/qvagrant/Vagrantfile','./'); echo 'Copied Vagrant file'.PHP_EOL;\""
+      "php -r \"copy('Vendor/hkwak/qvagrant/Vagrantfile','./Vagrantfile'); echo 'Copied Vagrant file'.PHP_EOL;\""
     ]
   }
 }
