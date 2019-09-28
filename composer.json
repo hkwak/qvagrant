@@ -1,0 +1,11 @@
+{
+  "name": "hkwak/qvagrant",
+  "description": "Quick Vagrant Machine configuration",
+  "type": "library",
+  "authors": [
+    {
+      "name": "Henryk Kwak",
+      "email": "henryk.kwak@gmail.com"
+    }
+  ]
+}

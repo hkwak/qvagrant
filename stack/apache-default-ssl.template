@@ -1,0 +1,31 @@
+
+<Directory /vagrant>
+        Options Indexes FollowSymLinks
+        AllowOverride all
+        Require all granted
+</Directory>
+
+<IfModule mod_ssl.c>
+
+  <VirtualHost _default_:443>
+  
+    ServerAdmin webmaster@localhost
+    ServerName vagrant.local
+
+    LogFormat "%v:%p \"%{Host}i\" %h %l %u %t \"%r\" %>s %O \"%{Referer}i\" \"%{User-Agent}i\"" vhost_default_443
+    CustomLog ${APACHE_LOG_DIR}/access_443.log vhost_default_443
+    ErrorLog ${APACHE_LOG_DIR}/errors_443.log
+
+    SSLEngine on
+    SSLProtocol all -SSLv2 -SSLv3
+    SSLVerifyClient none
+
+    SSLCertificateFile    /etc/ssl/certs/cert.crt
+    SSLCertificateKeyFile /etc/ssl/private/cert.key
+
+    RewriteEngine On
+
+    DocumentRoot /vagrant/public
+  </VirtualHost>
+  
+</IfModule>
