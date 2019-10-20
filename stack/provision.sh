@@ -122,9 +122,8 @@ then
     -subj "/CN=vagrant.local"
 fi
 
-
 # always update the default apache ssl config file
-cat /vagrant/stack/apache-default-ssl.template \
+cat /vendor/hkwak/qvagrant/stack/apache-default-ssl.template \
 > "/etc/apache2/sites-available/000-default-ssl.conf"
 
 a2ensite 000-default-ssl
@@ -139,11 +138,6 @@ a2enmod socache_shmcb > /dev/null
 a2enmod ssl > /dev/null
 
 service apache2 restart
-
-#sudo unlink /var/www/html
-#sudo rm -rf /var/www/html
-#sudo ln -fs /vagrant /var/www/html
-
 
 # installing composer
 curl --silent https://getcomposer.org/installer | php
