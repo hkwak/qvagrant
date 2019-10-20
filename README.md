@@ -23,7 +23,7 @@ and install the public and var directories.
 The public folder will be used by the apache server as a root directory, whilst the var folder will be used for storing log files 
 
 ```
-cp ./vendor/hkwak/qvagrant/Vagrantfile .; mdkir public; mkdir var
+cp ./vendor/hkwak/qvagrant/Vagrantfile .; mkdir public; mkdir var
 ``` 
 Additionally create some index file in the public folder to be able to access it via browser:
 
@@ -47,6 +47,23 @@ DATABASE="vagrant"
 REMOTE_USER="vagrant"
 REMOTE_PASSWORD="password"
 ```
+
+## Running the vagrant box
+To run the vagrant box type:
+```
+vagrant up
+```
+To stop: 
+```
+vagrant halt
+```
+To connect to the box via ssh:
+```
+vagrant ssh
+```
+
+One the vagrant box is up you can visit the page by opening https://vagrant.local in your browser
+
  
  
  

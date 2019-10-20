@@ -19,7 +19,7 @@ Vagrant.configure("2") do |config|
     vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
     vb.customize ["modifyvm", :id, "--ostype", "Ubuntu_64"]
     vb.customize ["modifyvm", :id, "--audio", "none", "--usb", "off", "--usbehci", "off"]
-    vb.customize ["modifyvm", :id, "--uartmode1", "file", File.join(Dir.pwd, "stack", "console.log") ]
+    vb.customize ["modifyvm", :id, "--uartmode1", "file", File.join(Dir.pwd, "var", "vagrant.log") ]
   end
 
   config.vm.network "private_network", ip: "192.168.10.10"
