@@ -25,6 +25,11 @@ The public folder will be used by the apache server as a root directory, whilst 
 ```
 cp ./vendor/hkwak/qvagrant/Vagrantfile .; mdkir public; mkdir var
 ``` 
+Additionally create some index file in the public folder to be able to access it via browser:
+
+```
+ echo "<?php phpinfo();" > ./public/index.php
+```
 
 By default the IP of the hosting is set to : 192.168.10.10 and the domain is set to : vagrant.local.
 In order bo to be able to access the hosted website you need to add the following entry to your hosts file:
