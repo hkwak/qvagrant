@@ -123,7 +123,7 @@ then
 fi
 
 # always update the default apache ssl config file
-cat /vendor/hkwak/qvagrant/stack/apache-default-ssl.template \
+cat /vagrant/vendor/hkwak/qvagrant/stack/apache-default-ssl.template \
 > "/etc/apache2/sites-available/000-default-ssl.conf"
 
 a2ensite 000-default-ssl
