@@ -19,23 +19,31 @@ echo "Installing Apache"
 apt-get install -y apache2 > /dev/null
 
 echo "Installing PHP"
-apt-get install -y php7.0 > /dev/null
-apt-get install -y php7.0-curl > /dev/null
-apt-get install -y php7.0-gd > /dev/null
-apt-get install -y php7.0-mbstring > /dev/null
-apt-get install -y php7.0-mcrypt > /dev/null
-apt-get install -y php7.0-mysql > /dev/null
-apt-get install -y php7.0-soap > /dev/null
-apt-get install -y php7.0-xml > /dev/null
-apt-get install -y php7.0-zip > /dev/null
+apt-get install software-properties-common
+add-apt-repository ppa:ondrej/php
+apt-get update
+apt-get install -y php7.1 > /dev/null
+apt-get install -y php7.1-cli > /dev/null
+apt-get install -y php7.1-common > /dev/null
+apt-get install -y php7.1-json > /dev/null
+apt-get install -y php7.1-opcache > /dev/null
+apt-get install -y php7.1-mysql > /dev/null
+apt-get install -y php7.1-mcrypt > /dev/null
+apt-get install -y php7.1-curl > /dev/null
+apt-get install -y php7.1-gd > /dev/null
+apt-get install -y php7.1-mbstring > /dev/null
+apt-get install -y php7.1-fpm > /dev/null
+apt-get install -y php7.1-soap > /dev/null
+apt-get install -y php7.1-xml > /dev/null
+apt-get install -y php7.1-zip > /dev/null
 
 echo "Installing XDebug"
 apt-get install php-xdebug > /dev/null
-echo "[Xdebug]" > /etc/php/7.0/mods-available/xdebug.ini
-echo 'zend_extension="/usr/lib/php/20151012/xdebug.so"' >> /etc/php/7.0/mods-available/xdebug.ini
-echo "xdebug.remote_enable=true" >> /etc/php/7.0/mods-available/xdebug.ini
-echo "xdebug.remote_connect_back=true" >> /etc/php/7.0/mods-available/xdebug.ini
-echo "xdebug.idekey=PHPSTORM" >> /etc/php/7.0/mods-available/xdebug.ini
+echo "[Xdebug]" > /etc/php/7.1/mods-available/xdebug.ini
+echo 'zend_extension="/usr/lib/php/20151012/xdebug.so"' >> /etc/php/7.1/mods-available/xdebug.ini
+echo "xdebug.remote_enable=true" >> /etc/php/7.1/mods-available/xdebug.ini
+echo "xdebug.remote_connect_back=true" >> /etc/php/7.1/mods-available/xdebug.ini
+echo "xdebug.idekey=PHPSTORM" >> /etc/php/7.1/mods-available/xdebug.ini
 
 echo "Installing ImageMagick"
 apt-get install -y imagemagick > /dev/null
@@ -56,7 +64,7 @@ sed -i \
     -e 's/^post_max_size\s*=.*$/post_max_size = 24M/' \
     -e 's/^upload_max_filesize\s*=.*$/upload_max_filesize = 32M/' \
     -e 's/^session\.gc_probability\s*=.*$/session.gc_probability = 1/' \
-    /etc/php/7.0/apache2/php.ini
+    /etc/php/7.1/apache2/php.ini
 
 echo "Configuring MySQL"
 
@@ -145,4 +153,3 @@ sudo mv composer.phar /usr/bin/composer
 
 # installing node.js
 apt-get -y install nodejs
-
