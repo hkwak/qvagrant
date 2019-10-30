@@ -29,3 +29,17 @@
   </VirtualHost>
   
 </IfModule>
+
+
+<VirtualHost _default_:80>
+    ServerAdmin webmaster@localhost
+    ServerName vagrant.local
+
+    LogFormat "%v:%p \"%{Host}i\" %h %l %u %t \"%r\" %>s %O \"%{Referer}i\" \"%{User-Agent}i\"" vhost_default_80
+    CustomLog ${APACHE_LOG_DIR}/access_80.log vhost_default_80
+    ErrorLog ${APACHE_LOG_DIR}/errors_80.log
+
+    RewriteEngine On
+
+    DocumentRoot /vagrant/public
+</VirtualHost>
