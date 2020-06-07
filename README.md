@@ -15,7 +15,7 @@ Before you start, install the Vigrant binaries from this location:
 To install the package please run
 
 ```
-composer require hkwak/qvagrant
+composer require --dev hkwak/qvagrant
 ```
 
 After the installation please copy the file located in ./vagrant/hkwak/qvagrant/Vagrantfile into your root package folder
