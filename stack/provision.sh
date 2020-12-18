@@ -36,6 +36,7 @@ apt-get install -y php7.1-fpm > /dev/null
 apt-get install -y php7.1-soap > /dev/null
 apt-get install -y php7.1-xml > /dev/null
 apt-get install -y php7.1-zip > /dev/null
+apt-get install -y php7.1-intl > /dev/null
 
 echo "Installing XDebug"
 apt-get install php-xdebug > /dev/null
